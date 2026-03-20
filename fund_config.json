@@ -1,0 +1,59 @@
+{
+  "003096": {
+    "fund_name": "中欧医疗",
+    "holdings": [
+      {
+        "stock_code": "603259",
+        "stock_name": "药明康德",
+        "weight": 0.1011
+      },
+      {
+        "stock_code": "600276",
+        "stock_name": "恒瑞医药",
+        "weight": 0.1008
+      },
+      {
+        "stock_code": "300759",
+        "stock_name": "康龙化成",
+        "weight": 0.0764
+      },
+      {
+        "stock_code": "300347",
+        "stock_name": "泰格医药",
+        "weight": 0.0654
+      },
+      {
+        "stock_code": "688506",
+        "stock_name": "百利天恒",
+        "weight": 0.0642
+      },
+      {
+        "stock_code": "002821",
+        "stock_name": "凯莱英",
+        "weight": 0.0563
+      },
+      {
+        "stock_code": "002294",
+        "stock_name": "信立泰",
+        "weight": 0.0487
+      },
+      {
+        "stock_code": "002653",
+        "stock_name": "海思科",
+        "weight": 0.0465
+      },
+      {
+        "stock_code": "002422",
+        "stock_name": "科伦药业",
+        "weight": 0.0416
+      },
+      {
+        "stock_code": "688235",
+        "stock_name": "百济神州",
+        "weight": 0.041
+      }
+    ],
+    "top10_total_weight": 0.642,
+    "last_update": "2026-03-20 19:23:23"
+  }
+}
