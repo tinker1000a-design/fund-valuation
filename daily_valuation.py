@@ -1,11 +1,12 @@
+import os
 import time
 import random
 import requests
 from fund_utils import load_config, compute_estimated_pct
 
 # ================== 可配置参数 ==================
-ENTERPRISE_WECHAT_WEBHOOK = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39d5f14d-ffc4-482f-8a5e-ab0e8dfb3ba5"
-ALERT_DROP = -0.5                    # 跌幅超过这个值（比如-1）就推送微信
+ENTERPRISE_WECHAT_WEBHOOK = os.environ.get("WEBHOOK")
+ALERT_DROP = -2                    # 跌幅超过这个值（比如-2）就推送微信
 # ================================================
 
 def get_global_market_data(holdings_list):
