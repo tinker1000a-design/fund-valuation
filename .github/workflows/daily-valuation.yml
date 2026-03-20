@@ -1,0 +1,27 @@
+name: 基金估值引擎（每天14:30自动跑）
+
+on:
+  schedule:
+    - cron: '30 6 * * *'     # 新加坡时间每天14:30（UTC+8）
+  workflow_dispatch:         # 可以手动点击立即测试
+
+jobs:
+  run-valuation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 拉取代码
+      uses: actions/checkout@v4
+      
+    - name: 设置 Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        
+    - name: 安装依赖
+      run: pip install requests
+      
+    - name: 运行估值脚本
+      env:
+        WEBHOOK: ${{ secrets.WEBHOOK }}
+      run: python daily_valuation.py
