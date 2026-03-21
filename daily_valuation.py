@@ -6,7 +6,7 @@ from fund_utils import load_config, compute_estimated_pct
 
 # ================== 可配置参数 ==================
 ENTERPRISE_WECHAT_WEBHOOK = os.environ.get("WEBHOOK")
-ALERT_DROP = -0                    # 跌幅超过这个值（比如-2）就推送微信
+ALERT_DROP = -2                    # 跌幅超过这个值（比如-2）就推送微信
 # ================================================
 
 def get_global_market_data(holdings_list):
