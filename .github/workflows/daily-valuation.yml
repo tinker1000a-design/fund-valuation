@@ -20,7 +20,7 @@ jobs:
         
     - name: 安装依赖
       run: pip install requests
-      
+      # trigger schedule
     - name: 运行估值脚本
       env:
         WEBHOOK: ${{ secrets.WEBHOOK }}
