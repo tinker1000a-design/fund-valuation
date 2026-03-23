@@ -2,8 +2,8 @@ name: 基金估值引擎（每天14:30自动跑）
 
 on:
   schedule:
-    - cron: '0 7 * * 1-5'     # 只周一到周五（1=Monday, 5=Friday），北京时间14:30
-  workflow_dispatch:           # 保持手动测试功能
+    - cron: '0 7 * * 1-5'  # 北京时间15:00，周一到周五
+  workflow_dispatch:     # 保留手动触发
 
 jobs:
   run-valuation:
