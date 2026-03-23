@@ -1,8 +1,9 @@
-name: 基金估值引擎（每天14:30自动跑）
+name: 基金估值引擎
 
 on:
   schedule:
-    - cron: '*/5 * * * 1-5'
+    # 这里的 cron 必须严格遵守 YAML 格式
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -10,18 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: 拉取代码
+    - name: checkout
       uses: actions/checkout@v4
       
-    - name: 设置 Python
+    - name: setup python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
         
-    - name: 安装依赖
+    - name: install
       run: pip install requests
-      # trigger schedule
-    - name: 运行估值脚本
+      
+    - name: run script
       env:
         WEBHOOK: ${{ secrets.WEBHOOK }}
       run: python daily_valuation.py
