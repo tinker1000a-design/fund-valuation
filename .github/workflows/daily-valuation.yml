@@ -2,8 +2,7 @@ name: 基金估值引擎（每天14:30自动跑）
 
 on:
   schedule:
-    - cron: '10 7 * * 1-5'
-      timezone: "Asia/Shanghai"  # 北京时间15:10
+    - cron: '15 7 * * 1-5'  # UTC 06:30 = 北京 14:30
   workflow_dispatch:
 
 jobs:
