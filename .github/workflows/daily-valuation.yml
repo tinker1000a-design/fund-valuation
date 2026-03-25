@@ -3,7 +3,7 @@ name: 基金估值引擎
 on:
   schedule:
     # 这里的 cron 必须严格遵守 YAML 格式
-    - cron: '*/5 * * * *'
+    - cron: '*/555 * * * *'
   workflow_dispatch:
 
 jobs:
