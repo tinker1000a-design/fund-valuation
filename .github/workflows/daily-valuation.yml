@@ -2,27 +2,28 @@ name: 基金估值引擎
 
 on:
   schedule:
-    # 这里的 cron 必须严格遵守 YAML 格式
-    - cron: '*/555 * * * *'
+    # 06:30 UTC = 14:30 Asia/Shanghai
+    - cron: '30 6 * * *'
   workflow_dispatch:
 
 jobs:
   run-valuation:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
-      
-    - name: setup python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-        
-    - name: install
-      run: pip install requests
-      
-    - name: run script
-      env:
-        WEBHOOK: ${{ secrets.WEBHOOK }}
-      run: python daily_valuation.py
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: write private configuration
+        env:
+          FUND_CONFIG_JSON: ${{ secrets.FUND_CONFIG_JSON }}
+        run: |
+          if [ -z "$FUND_CONFIG_JSON" ]; then
+            echo "Configure the FUND_CONFIG_JSON repository secret before running valuation."
+            exit 1
+          fi
+          printf '%s' "$FUND_CONFIG_JSON" > fund_config.json
+      - name: run script
+        run: python headless_valuation.py

@@ -1,0 +1,15 @@
+# Runtime and personal data
+/fund_config.json
+/fund_system_paths.json
+基金观察站.db
+基金观察站.db-*
+基金观察名单.json
+基金阈值触发.json
+valuation_history.json
+valuation_result.json
+基金净值追踪.html
+logs/
+cache/
+__pycache__/
+*.py[cod]
+*.log
